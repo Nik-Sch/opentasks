@@ -740,7 +740,7 @@ public class EditTaskFragment extends SupportFragment implements LoaderManager.L
                                     new Frozen<>(
                                             new QueryRowSet<>(
                                                     new InstancesView<>(mAuthority, activity.getContentResolver().acquireContentProviderClient(mAuthority)),
-                                                    Id.PROJECTION,
+                                                    Id.projection(),
                                                     new AllOf<>(
                                                             new EqArg<>(TaskContract.Instances.DISTANCE_FROM_CURRENT, 0),
                                                             new ReferringTo<>(TaskContract.Instances.TASK_ID, new RowUriReference<Tasks>(mTaskUri)))))))

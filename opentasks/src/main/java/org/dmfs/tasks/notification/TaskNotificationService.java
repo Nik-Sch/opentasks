@@ -118,7 +118,7 @@ public class TaskNotificationService extends JobIntentService
                                 new QueryRowSet<>(
                                         new Sorted<>(TaskContract.Instances._ID,
                                                 new InstancesView<>(authority, getContentResolver().acquireContentProviderClient(authority))),
-                                        new Composite<>(Id.PROJECTION, TaskVersion.PROJECTION, TaskPin.PROJECTION, TaskIsClosed.PROJECTION,
+                                        new Composite<>(Id.projection(), TaskVersion.PROJECTION, TaskPin.PROJECTION, TaskIsClosed.PROJECTION,
                                                 EffectiveDueDate.PROJECTION, TaskStart.PROJECTION),
                                         new AnyOf<>(
                                                 // task is either pinned or has a notification

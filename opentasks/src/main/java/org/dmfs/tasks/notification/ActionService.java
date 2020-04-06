@@ -117,7 +117,7 @@ public final class ActionService extends JobIntentService
             for (RowSnapshot<TaskContract.Instances> snapshot : new QueryRowSet<>(
                     new InstancesView<>(instanceUri.getAuthority(), contentProviderClient),
                     new org.dmfs.android.contentpal.projections.Composite<>(
-                            Id.PROJECTION,
+                            Id.projection(),
                             EffectiveDueDate.PROJECTION,
                             TaskStart.PROJECTION,
                             TaskPin.PROJECTION,

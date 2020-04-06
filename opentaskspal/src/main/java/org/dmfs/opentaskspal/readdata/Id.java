@@ -35,7 +35,14 @@ import androidx.annotation.NonNull;
  */
 public final class Id extends DelegatingSingle<Long>
 {
-    public static final Projection<BaseColumns> PROJECTION = new SingleColProjection<>(BaseColumns._ID);
+    private static final Projection<?> PROJECTION = new SingleColProjection<>(BaseColumns._ID);
+
+
+    public static <T> Projection<T> projection()
+    {
+        //noinspection unchecked
+        return (Projection<T>) PROJECTION;
+    }
 
 
     public Id(@NonNull RowDataSnapshot<?> rowDataSnapshot)
